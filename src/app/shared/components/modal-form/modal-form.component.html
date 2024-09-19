@@ -1,0 +1,55 @@
+<div class="modal-form">
+    <div class="modal-form-container">
+        <div class="modal-header">
+            <h3>Nueva ubicación</h3>
+        </div>
+        <form [formGroup]="formLocation" (submit)="onSubmit()">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mb-2">
+                            <label for="name" class="form-label label-required">Nombre</label>
+                            <input type="text" class="form-control" formControlName="name" id="name"
+                                [ngClass]="{'border border-danger': ( getProperties('name').invalid && getProperties('name').touched)}"
+                                placeholder="Ingresar nombre">
+
+                            <small class="text-danger small-required"
+                                [ngClass]="{'hidden-error': !( getProperties('name').invalid && getProperties('name').touched)}">
+                                Campo requerido</small>
+
+
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div>
+                            <label for="lat" class="form-label">Latitud</label>
+                            <input type="number" class="form-control" formControlName="latitude" id="lat"
+                                [ngClass]="{'border border-danger': ( getProperties('latitude').invalid && getProperties('latitude').touched)}"
+                                placeholder="Ingresar latitud">
+                            <small class="text-danger small-required"
+                                [ngClass]="{'hidden-error': !( getProperties('latitude').invalid && getProperties('latitude').touched)}">
+                                Campo requerido</small>
+
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div>
+                            <label for="lng" class="form-label">Longitud</label>
+                            <input type="number" class="form-control" id="lng" formControlName="longitude"
+                                [ngClass]="{'border border-danger': ( getProperties('longitude').invalid && getProperties('longitude').touched)}"
+                                placeholder="Ingresar longitud">
+                            <small class="text-danger small-required"
+                                [ngClass]="{'hidden-error': !( getProperties('longitude').invalid && getProperties('longitude').touched)}">
+                                Campo requerido</small>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer mt-3 gap-3">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="button" class="btn btn-secondary" (click)="closeModal()">Cerrar</button>
+            </div>
+        </form>
+    </div>
+</div>

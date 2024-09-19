@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { ClimaticLocation } from "../../models/climatic-locations.interfaces";
 
 @Component({
     selector: 'app-pill',
@@ -8,16 +9,14 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
         './pill.component.css',
     ]
 })
-export class PillComponent{
+export class PillComponent {
     @Input()
-    public pillText: string = "Placeholder";
+    public location!: ClimaticLocation;
 
     @Output()
-    public onClick: EventEmitter<MouseEvent> = new EventEmitter<MouseEvent>();
+    public onClick: EventEmitter<ClimaticLocation> = new EventEmitter<ClimaticLocation>();
 
-    constructor() { }
-
-    clickResponse(evt: MouseEvent){
-        this.onClick.emit(evt);
+    clickResponse(evt: MouseEvent) {
+        this.onClick.emit(this.location);
     }
 }

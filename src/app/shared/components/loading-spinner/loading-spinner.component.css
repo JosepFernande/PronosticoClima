@@ -1,0 +1,19 @@
+.spinner-container {
+  align-items: center;
+  background-color: var(--bs-heading-color);
+  border-radius: 20px;
+  bottom: 15px;
+  color: white;
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: fixed;
+  right: 15px;
+  box-shadow: 0px, 0px, 5px rgba(0, 0, 0, 0.5);
+}
+
+.spinner-container span {
+  color: var(--color-white);
+  margin-left: 5px;
+  background-color: var(--bs-heading-color);
+}
