@@ -80,11 +80,6 @@ export class IndexComponent implements OnInit {
         })
     }
 
-    handleClick() {
-        alert("temp handle click!");
-    }
-
-
     private getDayOfWeekFromDates(dates: Date[]): string[] {
         const daysOfWeek = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
 
